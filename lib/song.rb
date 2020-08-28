@@ -5,15 +5,19 @@ class Song
 
   attr_accessor :name, :artist
 
-  @@song_list = []
+  @@all = []
 
   def initialize(name)
     @name = name
-    @@song_list.push(self)
+    @@all.push(self)
   end
 
   def self.all
-    @@song_list
+    @@all
+  end
+
+  def artist_name
+    self.artist ? self.artist.name : nil
   end
 
 end
